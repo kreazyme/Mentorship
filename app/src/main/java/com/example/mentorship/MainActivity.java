@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-
         //set
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message2");
@@ -39,6 +38,5 @@ public class MainActivity extends AppCompatActivity {
                 // Failed to read value
             }
         });
-
     }
 }
