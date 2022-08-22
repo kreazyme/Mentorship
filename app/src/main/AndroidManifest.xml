@@ -14,7 +14,13 @@
         android:theme="@style/Theme.Mentorship"
         tools:targetApi="31">
         <activity
-            android:name=".LogIn"
+            android:name=".Homepage.Homepage"
+            android:exported="false" />
+        <activity
+            android:name=".Mentor.MentorDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Log.LogIn"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

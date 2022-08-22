@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Mentorship</string>
+    <string-array name="field">
+        <item>Mobile</item>
+        <item>AI</item>
+        <item>Machine Learning</item>
+        <item>Web</item>
+    </string-array>
 </resources>

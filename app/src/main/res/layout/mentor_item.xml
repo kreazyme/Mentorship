@@ -5,112 +5,131 @@
     android:layout_width="wrap_content"
     android:layout_height="200dp">
 
-    <ImageView
-        android:id="@+id/mentor_item_imageView_avatar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mentor_avatar" />
-
-    <TextView
-        android:id="@+id/mentor_item_textView_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lê Đình Hiếu"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mentor_item_imageView_avatar" />
-
-    <TextView
-        android:id="@+id/mentor_item_textView_job"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Senior Java tại\nMDC Software"
-        android:gravity="center"
-        android:layout_marginTop="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mentor_item_textView_name" />
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        app:cardBackgroundColor="@color/purple_700"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mentor_item_textView_job">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="7dp"
-            app:srcCompat="@drawable/people"
-            app:tint="@color/white" />
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/mentor_item_textView_numOfMentee"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2000"
-        android:layout_marginLeft="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="@+id/cardView" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView1"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        app:cardBackgroundColor="@color/purple_700"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toEndOf="@id/mentor_item_textView_numOfMentee"
-        app:layout_constraintTop_toBottomOf="@+id/mentor_item_textView_job">
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="7dp"
-            app:srcCompat="@drawable/followers"
-            app:tint="@color/white" />
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/mentor_item_textView_numOfFollowers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="30"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView1"
-        app:layout_constraintStart_toEndOf="@+id/cardView1"
-        app:layout_constraintTop_toTopOf="@+id/cardView1" />
-
-    <ImageView
-        android:id="@+id/mentor_item_imageButton_follow"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@color/purple_700"
-        android:padding="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mentor_item_textView_numOfFollowers"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mentor_item_textView_numOfFollowers"
-        app:layout_constraintTop_toTopOf="@+id/mentor_item_textView_numOfFollowers"
-        app:srcCompat="@drawable/mentor_icon_follow"
-        app:tint="@color/white" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/mentor_item_imageView_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/mentor_avatar" />
+
+            <TextView
+                android:id="@+id/mentor_item_textView_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Lê Đình Hiếu"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mentor_item_imageView_avatar" />
+
+            <TextView
+                android:id="@+id/mentor_item_textView_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:text="Senior Java tại\nMDC Software"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mentor_item_textView_name" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/purple_700"
+                app:cardCornerRadius="12.5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mentor_item_textView_job">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/people"
+                    app:tint="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/mentor_item_textView_numOfMentee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="2000"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/purple_700"
+                app:cardCornerRadius="12.5dp"
+                app:layout_constraintStart_toEndOf="@id/mentor_item_textView_numOfMentee"
+                app:layout_constraintTop_toBottomOf="@+id/mentor_item_textView_job">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/followers"
+                    app:tint="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/mentor_item_textView_numOfFollowers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="30"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView1"
+                app:layout_constraintStart_toEndOf="@+id/cardView1"
+                app:layout_constraintTop_toTopOf="@+id/cardView1" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="12.5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/mentor_item_textView_numOfFollowers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mentor_item_textView_numOfFollowers"
+                app:layout_constraintTop_toTopOf="@+id/mentor_item_textView_numOfFollowers">
+
+                <ImageView
+                    android:id="@+id/mentor_item_imageButton_follow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple_700"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/mentor_icon_follow"
+                    app:tint="@color/white" />
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
