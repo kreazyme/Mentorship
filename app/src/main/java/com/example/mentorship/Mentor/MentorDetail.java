@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.mentorship.Chat.ChatScreen;
 import com.example.mentorship.R;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
    private RecyclerView recyclerView;
    private Mentor mentor = new Mentor();
    private ImageButton button_back;
+   private Button Chat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,7 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
         Intent intent = getIntent();
         mentor = (Mentor) intent.getSerializableExtra("Mentor");
         textView_numOfMentee = findViewById(R.id.mentor_detail_textView_numOfMentee);
+        Chat = findViewById(R.id.mentor_detail_button_setSchedule);
         textView_numOfHourMent = findViewById(R.id.mentor_detail_textView_numOfHourMentor);
         textView_rate = findViewById(R.id.mentor_detail_textView_rate);
         textView_intro = findViewById(R.id.mentor_detail_textView_introduce);
@@ -44,6 +48,15 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
                 finish();
             }
         });
+
+
+        Chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MentorDetail.this, ChatScreen.class));
+            }
+        });
+
     }
     public void renderRecyclerView(ArrayList<MentorActivity> list){
         recyclerView.setHasFixedSize(true);
