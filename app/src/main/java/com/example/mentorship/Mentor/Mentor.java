@@ -10,6 +10,8 @@ public class Mentor implements Serializable {
     private int avatar = R.drawable.mentor_avatar;
     private String name = "";
     private String job = "";
+    private String phoneNum = "";
+    private String email = "";
     private String workPlace = "";
     private int numOfMentor = 0;
     private int numOfMentee = 0;
@@ -68,8 +70,45 @@ public class Mentor implements Serializable {
         this.awardList = awardList;
     }
 
+    public Mentor(int avatar, String name, String job, String phoneNum, String email, String workPlace, int numOfMentor, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<String> degreeList, ArrayList<String> awardList) {
+        this.avatar = avatar;
+        this.name = name;
+        this.job = job;
+        this.phoneNum = phoneNum;
+        this.email = email;
+        this.workPlace = workPlace;
+        this.numOfMentor = numOfMentor;
+        this.numOfMentee = numOfMentee;
+        this.numOfFollowers = numOfFollowers;
+        this.numOfHourMent = numOfHourMent;
+        this.rate = rate;
+        this.introduction = introduction;
+        this.mentorActivities = mentorActivities;
+        this.experienceList = experienceList;
+        this.studyList = studyList;
+        this.skillList = skillList;
+        this.degreeList = degreeList;
+        this.awardList = awardList;
+    }
+
     public Mentor() {
 
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAvatar() {
