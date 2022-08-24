@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/drawable/like_button.xml" value="0.248" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/drawable/new_post_bg_xml.xml" value="0.248" />
         <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/calendar_screen.xml" value="0.45085470085470086" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/forum_screen.xml" value="0.4" />
         <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/layout.xml" value="0.2359375" />
       </map>
     </option>
