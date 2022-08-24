@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
 //        DatabaseReference myRef = database.getReference("message");
 //        myRef.setValue("Testing");
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         //set
         FirebaseDatabase database = FirebaseDatabase.getInstance();

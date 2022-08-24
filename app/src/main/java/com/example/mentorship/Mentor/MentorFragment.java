@@ -27,13 +27,16 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mentor,container,false);
-        recyclerView = view.findViewById(R.id.mentor_recyclerView_mentorList);
-        spinner_field = view.findViewById(R.id.mentor_spinner_fields);
-        spinner_lang = view.findViewById(R.id.mentor_spinner_lang);
-        button_find_mentor = view.findViewById(R.id.mentor_button_find_mentor);
+        refer(view);
         addMentorList();
         setFieldSpinner();
         setLanguageSpinner();
+        button_find_mentor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),MentorResult.class));
+            }
+        });
         return view;
     }
     public void addMentorList(){
@@ -79,6 +82,12 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         Intent intent = new Intent(getActivity(),MentorDetail.class);
         intent.putExtra("Mentor",mentor);
         startActivity(intent);
+    }
+    public void refer(View view){
+        recyclerView = view.findViewById(R.id.mentor_recyclerView_mentorList);
+        spinner_field = view.findViewById(R.id.mentor_spinner_fields);
+        spinner_lang = view.findViewById(R.id.mentor_spinner_lang);
+        button_find_mentor = view.findViewById(R.id.mentor_button_find_mentor);
     }
 }
 
