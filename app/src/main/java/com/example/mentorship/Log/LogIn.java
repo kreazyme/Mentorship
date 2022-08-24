@@ -7,7 +7,6 @@ import android.os.Bundle;
 import com.example.mentorship.R;
 
 public class LogIn extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

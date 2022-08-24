@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Mentorship</string>
+    <string-array name="field">
+        <item>Mobile</item>
+        <item>AI</item>
+        <item>Machine Learning</item>
+        <item>Web</item>
+        <item>Networking</item>
+        <item>Embedded System</item>
+        <item>IoT</item>
+    </string-array>
+    <string-array name="language">
+        <item>Java</item>
+        <item>C++</item>
+        <item>C</item>
+        <item>Python</item>
+        <item>Javascript</item>
+    </string-array>
 </resources>

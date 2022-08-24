@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="190dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/app_name" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settings"
+        app:tint="@color/purple_700" />
+   <androidx.cardview.widget.CardView
+       android:id="@+id/profile_cardView_avatar"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/imageView6"
+       android:layout_marginTop="10dp"
+       app:cardCornerRadius="50dp"
+       >
+    <ImageView
+        android:id="@+id/profile_imageView_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/backgroundlogin"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="86dp" />
+   </androidx.cardview.widget.CardView>
+  <androidx.cardview.widget.CardView
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      app:cardCornerRadius="20dp"
+      app:cardBackgroundColor="@color/graytext"
+      app:layout_constraintBottom_toBottomOf="@id/profile_cardView_avatar"
+      app:layout_constraintEnd_toEndOf="@id/profile_cardView_avatar"
+      >
+
+      <ImageView
+          android:id="@+id/imageView8"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:padding="7dp"
+          app:srcCompat="@drawable/camera"
+          tools:layout_editor_absoluteX="218dp"
+          tools:layout_editor_absoluteY="115dp" />
+  </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/profile_button_watch_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xem hồ sơ"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_cardView_avatar" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Tiện ích"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_button_watch_file" />
+   <androidx.cardview.widget.CardView
+       android:id="@+id/profile_cardView_love"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:layout_marginTop="10dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       app:cardCornerRadius="7dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/textView6"
+       >
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <ImageView
+               android:id="@+id/imageView9"
+               android:layout_width="30dp"
+               android:layout_height="30dp"
+               android:layout_marginLeft="10dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:srcCompat="@drawable/profile_love"
+               app:tint="@color/red" />
+
+           <TextView
+               android:id="@+id/textView12"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Yêu thích"
+               android:textStyle="bold"
+               android:textColor="@color/purple_700"
+               android:layout_marginLeft="15dp"
+               android:textSize="17sp"
+               app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+               app:layout_constraintStart_toEndOf="@+id/imageView9"
+               app:layout_constraintTop_toTopOf="@+id/imageView9"
+               app:layout_constraintVertical_bias="0.476" />
+
+           <ImageView
+               android:id="@+id/imageView10"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:layout_marginRight="10dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:srcCompat="@drawable/profile_arrow_right"
+               app:tint="@color/purple_700" />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_cardView_register_to_be_mentor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_cardView_love"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_register_to_be_mentor"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_mentor"
+                app:tint="@color/green" />
+
+            <TextView
+                android:id="@+id/textView_register_to_be_mentor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng kí làm mentor"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:layout_marginLeft="15dp"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_register_to_be_mentor"
+                app:layout_constraintStart_toEndOf="@+id/imageView_register_to_be_mentor"
+                app:layout_constraintTop_toTopOf="@+id/imageView_register_to_be_mentor"
+                 />
+
+            <ImageView
+                android:id="@+id/imageView_reg_to_be_mentor_next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_arrow_right"
+                app:tint="@color/purple_700" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_cardView_share"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_cardView_register_to_be_mentor"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_share"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_share"
+                app:tint="@color/blue" />
+
+            <TextView
+                android:id="@+id/textView_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chia sẻ với bạn bè"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:layout_marginLeft="15dp"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_share"
+                app:layout_constraintStart_toEndOf="@+id/imageView_share"
+                app:layout_constraintTop_toTopOf="@+id/imageView_share"
+                app:layout_constraintVertical_bias="0.476" />
+
+            <ImageView
+                android:id="@+id/imageView_share_next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_arrow_right"
+                app:tint="@color/purple_700" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_cardView_care"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_cardView_share"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_care"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_field"
+                app:tint="@color/orange" />
+
+            <TextView
+                android:id="@+id/textView_care"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lĩnh vực quan tâm"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:layout_marginLeft="15dp"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_care"
+                app:layout_constraintStart_toEndOf="@+id/imageView_care"
+                app:layout_constraintTop_toTopOf="@+id/imageView_care"
+                app:layout_constraintVertical_bias="0.476" />
+
+            <ImageView
+                android:id="@+id/imageView_care_next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_arrow_right"
+                app:tint="@color/purple_700" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_cardView_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_cardView_care"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_feedback"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_suggest"
+                app:tint="@color/red" />
+
+            <TextView
+                android:id="@+id/textView_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Góp ý cho Mentorship"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                android:layout_marginLeft="15dp"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_feedback"
+                app:layout_constraintStart_toEndOf="@+id/imageView_feedback"
+                app:layout_constraintTop_toTopOf="@+id/imageView_feedback"
+                app:layout_constraintVertical_bias="0.476" />
+
+            <ImageView
+                android:id="@+id/imageView_feedback_next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_arrow_right"
+                app:tint="@color/purple_700" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -35,7 +35,7 @@ public class MentorItemAdapter extends RecyclerView.Adapter<MentorItemAdapter.It
         Mentor mentor = mentorList.get(position);
         holder.imageView_avatar.setImageResource(mentor.getAvatar());
         holder.textView_name.setText(mentor.getName());
-        holder.textView_job.setText(mentor.getJob()+" at "+mentor.getWorkPlace());
+        holder.textView_job.setText(mentor.getJob()+"\nat "+mentor.getWorkPlace());
         holder.textView_numOfMentee.setText(mentor.getNumOfMentee()+"");
         holder.textView_numOfFollowers.setText(mentor.getNumOfFollowers()+"");
     }

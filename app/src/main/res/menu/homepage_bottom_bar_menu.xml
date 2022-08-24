@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/homepage_bottom_bar_mentor"
+    android:icon="@drawable/homepage_icon_mentor"
+    android:title="Cố vấn"
+    />
+    <item
+        android:id="@+id/homepage_bottom_bar_forum"
+        android:icon="@drawable/homepage_icon_forum"
+        android:title="Diễn đàn"
+        />
+    <item
+        android:id="@+id/homepage_bottom_bar_calendar"
+        android:icon="@drawable/homepage_icon_calendar"
+        android:title="Lịch hẹn"
+        />
+    <item
+        android:id="@+id/homepage_bottom_bar_noti"
+        android:icon="@drawable/homepage_icon_notification"
+        android:title="Thông báo"
+        />
+    <item
+        android:id="@+id/homepage_bottom_bar_profile"
+        android:icon="@drawable/homepage_icon_profile"
+        android:title="Tôi"
+        />
+</menu>

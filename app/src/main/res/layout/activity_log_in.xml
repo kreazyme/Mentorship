@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/login_textView_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/login_textView_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -56,28 +56,28 @@
         android:backgroundTint="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@id/login_textView_username" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/login_textView_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quên mật khẩu"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:textColor="@color/purple_700"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintEnd_toEndOf="@id/login_textView_password"
+        app:layout_constraintTop_toBottomOf="@+id/login_textView_password" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/login_button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Đăng nhập"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/login_textView_forgot_password" />
 
     <TextView
         android:id="@+id/textView7"
@@ -90,10 +90,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/login_button_login" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/login_button_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="Đăng kí"
@@ -105,7 +105,7 @@
         app:layout_constraintVertical_bias="0.551" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/login_imageButton_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
