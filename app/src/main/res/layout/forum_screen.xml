@@ -92,36 +92,51 @@ Xem thêm"
         android:paddingVertical="12dp"
         android:layout_height="wrap_content"/>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="60dp"
+            android:src="@drawable/reaction_icon"
+            android:layout_height="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="10k"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="24dp"
-            android:src="@drawable/like_button"
-            android:id="@+id/btn_like"
-            android:layout_height="24dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="Thich"
-            android:layout_gravity="center"
-            android:paddingHorizontal="4dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_width="24dp"
                 android:src="@drawable/like_button"
-                android:id="@+id/btn_comment"
+                android:id="@+id/btn_like"
                 android:layout_height="24dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:text="Thich"
+                android:layout_gravity="center"
+                android:paddingHorizontal="4dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="24dp"
+                android:src="@drawable/comment_icon"
+                android:id="@+id/btnComment"
+                android:layout_height="24dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Bình luận"
                 android:layout_gravity="center"
                 android:paddingHorizontal="4dp"
                 android:layout_height="wrap_content"/>
