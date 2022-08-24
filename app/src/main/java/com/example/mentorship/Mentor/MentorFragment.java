@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mentorship.Mentor.Activity.MentorDetail;
+import com.example.mentorship.Mentor.Activity.MentorResult;
 import com.example.mentorship.R;
 
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         button_find_mentor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),MentorResult.class));
+                startActivity(new Intent(getActivity(), MentorResult.class));
             }
         });
         return view;
@@ -79,7 +81,7 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         startIntent(mentor);
     }
     public void startIntent(Mentor mentor){
-        Intent intent = new Intent(getActivity(),MentorDetail.class);
+        Intent intent = new Intent(getActivity(), MentorDetail.class);
         intent.putExtra("Mentor",mentor);
         startActivity(intent);
     }

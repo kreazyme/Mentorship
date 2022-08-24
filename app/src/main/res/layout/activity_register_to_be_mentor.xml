@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Mentor.Activity.RegisterToBeMentorActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageButton
+        android:id="@+id/reg_mentor_imageButton_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back"
+        android:onClick="reg_mentor_back"
+        />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kinh nghiệm làm việc"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/reg_mentor_imageButton_back"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mentor_imageButton_back" />
+
+    <EditText
+        android:id="@+id/reg_mentor_editText_experience"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="Kinh nghiệm làm việc"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Học vấn"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/reg_mentor_editText_experience"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mentor_editText_experience" />
+
+    <EditText
+        android:id="@+id/reg_mentor_editText_study"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Học vấn"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/reg_mentor_editText_experience"
+        app:layout_constraintStart_toStartOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kỹ năng"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/reg_mentor_editText_study"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mentor_editText_study" />
+
+    <EditText
+        android:id="@+id/reg_mentor_editText_skill"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Kỹ năng"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/reg_mentor_editText_study"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chứng chỉ"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/reg_mentor_editText_skill"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mentor_editText_skill" />
+
+    <EditText
+        android:id="@+id/reg_mentor_editText_degree_link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Link"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/reg_mentor_editText_skill"
+        app:layout_constraintStart_toStartOf="@+id/textView33"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <EditText
+        android:id="@+id/reg_mentor_editText_degree_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Mô tả"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/reg_mentor_editText_degree_link"
+        app:layout_constraintStart_toStartOf="@+id/reg_mentor_editText_degree_link"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mentor_editText_degree_link" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giải thưởng"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/reg_mentor_editText_degree_description"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mentor_editText_degree_description" />
+
+    <EditText
+        android:id="@+id/reg_mentor_editText_award"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Giải thưởng"
+        app:layout_constraintEnd_toEndOf="@+id/reg_mentor_editText_degree_description"
+        app:layout_constraintStart_toStartOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+    <Button
+        android:id="@+id/reg_mentor_button_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Đăng kí làm Mentor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mentor_editText_award"
+        android:onClick="reg_mentor_register"
+        />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backgroundlogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
