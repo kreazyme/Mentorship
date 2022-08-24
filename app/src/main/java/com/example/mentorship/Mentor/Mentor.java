@@ -4,6 +4,7 @@ import com.example.mentorship.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Mentor implements Serializable {
     private int avatar = R.drawable.mentor_avatar;
@@ -16,6 +17,8 @@ public class Mentor implements Serializable {
     private float rate = (float) 4.9;
     private String introduction = "";
     private ArrayList<MentorActivity> mentorActivities = new ArrayList<>();
+
+    private List<String> specialized;
 
     public Mentor(int avatar, String name, String job, String workPlace, int numOfMentee, int numOfFollowers, float rate, String introduction, ArrayList<MentorActivity> mentorActivities,int x) {
         this.avatar = avatar;
@@ -114,4 +117,11 @@ public class Mentor implements Serializable {
         this.mentorActivities = mentorActivities;
     }
 
+    public List<String> getSpecialized() {
+        return specialized;
+    }
+
+    public void setSpecialized(List<String> specialized) {
+        this.specialized = specialized;
+    }
 }
