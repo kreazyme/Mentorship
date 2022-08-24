@@ -1,11 +1,15 @@
 package com.example.mentorship.Mentor;
 
 import com.example.mentorship.R;
+import com.example.mentorship.entity.Degree;
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+@IgnoreExtraProperties
 public class Mentor implements Serializable {
     private int avatar = R.drawable.mentor_avatar;
     private String name = "";
@@ -32,9 +36,8 @@ public class Mentor implements Serializable {
             "Giao tiếp Tiếng Anh",
             "Nấu ăn"
     ));
-    private ArrayList<String> degreeList = new ArrayList<>(Arrays.asList(
-            "SQL Advance of Hackerrank"
-    ));
+    private ArrayList<Degree> degreeList = new ArrayList<>(Arrays.asList(
+            new Degree("1", "abcxyz", "abcxyz")));
     private ArrayList<String> awardList = new ArrayList<>(Arrays.asList(
             "Giải ba Olympic Toán học sinh, sinh viên"
     ));
@@ -52,7 +55,7 @@ public class Mentor implements Serializable {
         this.numOfHourMent = x;
     }
 
-    public Mentor(int avatar, String name, String job, String workPlace, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<String> degreeList, ArrayList<String> awardList) {
+    public Mentor(int avatar, String name, String job, String workPlace, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<Degree> degreeList, ArrayList<String> awardList) {
         this.avatar = avatar;
         this.name = name;
         this.job = job;
@@ -70,7 +73,7 @@ public class Mentor implements Serializable {
         this.awardList = awardList;
     }
 
-    public Mentor(int avatar, String name, String job, String phoneNum, String email, String workPlace, int numOfMentor, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<String> degreeList, ArrayList<String> awardList) {
+    public Mentor(int avatar, String name, String job, String phoneNum, String email, String workPlace, int numOfMentor, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<Degree> degreeList, ArrayList<String> awardList) {
         this.avatar = avatar;
         this.name = name;
         this.job = job;
@@ -223,11 +226,11 @@ public class Mentor implements Serializable {
         this.skillList = skillList;
     }
 
-    public ArrayList<String> getDegreeList() {
+    public ArrayList<Degree> getDegreeList() {
         return degreeList;
     }
 
-    public void setDegreeList(ArrayList<String> degreeList) {
+    public void setDegreeList(ArrayList<Degree> degreeList) {
         this.degreeList = degreeList;
     }
 
@@ -238,4 +241,6 @@ public class Mentor implements Serializable {
     public void setAwardList(ArrayList<String> awardList) {
         this.awardList = awardList;
     }
+
+
 }
