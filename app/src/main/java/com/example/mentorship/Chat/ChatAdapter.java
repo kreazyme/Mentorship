@@ -16,7 +16,8 @@ import java.util.ArrayList;
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
     private ArrayList<Message> mChat;
-
+    public static  final int MSG_TYPE_LEFT = 0;
+    public static  final int MSG_TYPE_RIGHT = 1;
     public ChatAdapter( ArrayList<Message> chat) {
         this.mChat = chat;
     }
@@ -24,7 +25,21 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.chatitem, parent, false));
+        if(viewType == MSG_TYPE_LEFT){
+            return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.chatitem, parent, false));
+        }
+        else {
+            return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item_me, parent, false));
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (mChat.get(position).isFromme()){
+            return MSG_TYPE_RIGHT;
+        } else {
+            return MSG_TYPE_LEFT;
+        }
     }
 
     @Override
