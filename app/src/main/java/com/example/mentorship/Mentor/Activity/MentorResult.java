@@ -1,4 +1,4 @@
-package com.example.mentorship.Mentor;
+package com.example.mentorship.Mentor.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,10 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.mentorship.Mentor.Mentor;
+import com.example.mentorship.Mentor.MentorActivity;
+import com.example.mentorship.Mentor.MentorItemAdapter2;
+import com.example.mentorship.Mentor.MentorItemClickListener;
 import com.example.mentorship.R;
 
 import java.util.ArrayList;

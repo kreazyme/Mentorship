@@ -14,7 +14,13 @@
         android:theme="@style/Theme.Mentorship"
         tools:targetApi="31">
         <activity
-            android:name=".Mentor.MentorResult"
+            android:name=".Mentor.Activity.RegisterToBeMentorResult"
+            android:exported="false" />
+        <activity
+            android:name=".Mentor.Activity.RegisterToBeMentorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mentor.Activity.MentorResult"
             android:exported="false" />
         <activity
             android:name=".Calendar.CalendarActivity"
@@ -31,7 +37,7 @@
             android:name=".Homepage.Homepage"
             android:exported="false" />
         <activity
-            android:name=".Mentor.MentorDetail"
+            android:name=".Mentor.Activity.MentorDetail"
             android:exported="false" />
         <activity
             android:name=".Log.LogIn"

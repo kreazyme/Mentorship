@@ -1,4 +1,4 @@
-package com.example.mentorship.Mentor;
+package com.example.mentorship.Mentor.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,6 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.mentorship.Calendar.CalendarActivity;
 import com.example.mentorship.Chat.ChatScreen;
+import com.example.mentorship.Mentor.Mentor;
+import com.example.mentorship.Mentor.MentorActivity;
+import com.example.mentorship.Mentor.MentorActivityAdapter;
+import com.example.mentorship.Mentor.MentorActivityClickListener;
 import com.example.mentorship.R;
 
 import java.util.ArrayList;
