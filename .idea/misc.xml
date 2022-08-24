@@ -33,6 +33,19 @@
         <entry key="..\:/Studying/AndroidStudio/Mentorship/app/src/main/res/layout/profile_detail_info_item.xml" value="0.25" />
         <entry key="..\:/Studying/AndroidStudio/Mentorship/app/src/main/res/menu/homepage_bottom_bar_menu.xml" value="0.31302083333333336" />
         <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/drawable/bg_chat_item.xml" value="0.162" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/drawable/like_button.xml" value="0.248" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/drawable/new_post_bg_xml.xml" value="0.248" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/activity_chat_screen.xml" value="0.35390625" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/calendar_screen.xml" value="0.45085470085470086" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/chat_item_me.xml" value="0.375" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/chat_screen.xml" value="0.3734375" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/chatitem.xml" value="0.375" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/forum_screen.xml" value="0.4" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/layout.xml" value="0.2359375" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/mentor.xml" value="0.375" />
+        <entry key="..\:/WorkingFolder/Mentorship/app/src/main/res/layout/mentor_detail_activity.xml" value="0.375" />
       </map>
     </option>
   </component>

@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.mentorship.Calendar.CalendarActivity;
+import com.example.mentorship.Chat.ChatScreen;
 import com.example.mentorship.R;
 
 import java.util.ArrayList;
@@ -23,6 +23,7 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
    private Mentor mentor = new Mentor();
    private ImageButton button_back;
    public Button button_set_schedule,button_message,button_like;
+   private Button Chat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,12 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
         Intent intent = getIntent();
         mentor = (Mentor) intent.getSerializableExtra("Mentor");
         refer();
+        textView_numOfHourMent = findViewById(R.id.mentor_detail_textView_numOfHourMentor);
+        textView_rate = findViewById(R.id.mentor_detail_textView_rate);
+        textView_intro = findViewById(R.id.mentor_detail_textView_introduce);
+        textView_name = findViewById(R.id.mentor_detail_textView_name);
+        recyclerView = findViewById(R.id.mentor_detail_recyclerView_fields);
+        button_back = findViewById(R.id.mentor_detail_imageButton_back);
         textView_numOfMentee.setText(mentor.getNumOfMentee()+"");
         textView_numOfHourMent.setText(mentor.getNumOfHourMent()+"");
         textView_rate.setText(mentor.getRate()+"");
@@ -42,6 +49,15 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
                 finish();
             }
         });
+
+
+        button_message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MentorDetail.this, ChatScreen.class));
+            }
+        });
+
     }
     public void renderRecyclerView(ArrayList<MentorActivity> list){
         recyclerView.setHasFixedSize(true);

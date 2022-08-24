@@ -20,6 +20,11 @@
             android:name=".Calendar.CalendarActivity"
             android:exported="false" />
         <activity
+            android:name=".Chat.ChatScreen"
+            android:exported="false"
+            android:label="@string/title_activity_screen_chat"
+            android:theme="@style/Theme.Mentorship.NoActionBar" />
+        <activity
             android:name=".Profile.ProfileDetail"
             android:exported="false" />
         <activity
