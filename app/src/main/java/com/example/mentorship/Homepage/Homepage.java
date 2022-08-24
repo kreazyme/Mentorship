@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.mentorship.Mentor.MentorFragment;
+import com.example.mentorship.Profile.ProfileFragment;
 import com.example.mentorship.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -28,7 +29,10 @@ public class Homepage extends AppCompatActivity {
                         Toast.makeText(Homepage.this, "Mentor", Toast.LENGTH_SHORT).show();
                         changeFragment(new MentorFragment());
                         break;
-                        
+                    case R.id.homepage_bottom_bar_profile:
+                        Toast.makeText(Homepage.this, "Profile", Toast.LENGTH_SHORT).show();
+                        changeFragment(new ProfileFragment());
+                        break;
                 }
                 return true;
             }

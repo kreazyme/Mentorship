@@ -1,6 +1,8 @@
 package com.example.mentorship.Mentor;
 
-public class MentorActivity {
+import java.io.Serializable;
+
+public class MentorActivity implements Serializable {
     private int activityPicture;
     private String activity;
     private String language;

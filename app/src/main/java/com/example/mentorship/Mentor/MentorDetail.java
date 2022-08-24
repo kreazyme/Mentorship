@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -23,9 +22,9 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mentor_detail);
-//        Intent intent = getIntent();
-//        mentor = (Mentor) intent.getSerializableExtra("Mentor");
+        setContentView(R.layout.mentor_detail_activity);
+        Intent intent = getIntent();
+        mentor = (Mentor) intent.getSerializableExtra("Mentor");
         textView_numOfMentee = findViewById(R.id.mentor_detail_textView_numOfMentee);
         textView_numOfHourMent = findViewById(R.id.mentor_detail_textView_numOfHourMentor);
         textView_rate = findViewById(R.id.mentor_detail_textView_rate);

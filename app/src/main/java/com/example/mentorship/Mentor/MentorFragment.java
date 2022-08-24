@@ -33,16 +33,17 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         button_find_mentor = view.findViewById(R.id.mentor_button_find_mentor);
         addMentorList();
         setFieldSpinner();
+        setLanguageSpinner();
         return view;
     }
     public void addMentorList(){
         ArrayList<MentorActivity> list = new ArrayList<>();
         list.add(new MentorActivity(R.drawable.android,"Định hướng và chia sẻ kinh nghiệm trong lĩnh vực Mobile Android","Java"));
         list.add(new MentorActivity(R.drawable.java,"Chia sẻ kinh nghiệm về Java","Java"));
-        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Đình Hiếu Lê","Java Senior","MDC Software",200,300, (float) 4.9,"Hi every one, I'm Hieu",list,78));
-        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Trần Đức","Java Intern","DN Software",100,400, 5.0F,"Hi, I'm Trần Đức Bo",list,80));
-        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Lê Thu Thảo","CEO","Korin",300,100, (float) 4.8,"Hi everyon",list,200));
-        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Hoãng Doãn","Java Senior","CMC Software",100,300, 4.5F,"Hi",list,100));
+        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Đình Hiếu Lê","Java Senior","MDC Software",100,200,300, (float) 4.9,"Hi every one, I'm Hieu",list,78));
+        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Trần Đức","Java Intern","DN Software",100,100,400, 5.0F,"Hi, I'm Trần Đức Bo",list,80));
+        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Lê Thu Thảo","CEO","Korin",100,300,100, (float) 4.8,"Hi everyon",list,200));
+        mentorList.add(new Mentor(R.drawable.mentor_avatar,"Hoãng Doãn","Java Senior","CMC Software",100,100,300, 4.5F,"Hi",list,100));
         recyclerView.setHasFixedSize(true);
         MentorItemAdapter adapter = new MentorItemAdapter(mentorList,this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
@@ -61,6 +62,14 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         );
         spinner_field.setAdapter(adapter);
     }
+    public void setLanguageSpinner(){
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                getContext(),
+                R.array.language,
+                android.R.layout.simple_spinner_item
+        );
+        spinner_lang.setAdapter(adapter);
+    }
     @Override
     public void onMentorItemClickListener(int position) {
         Mentor mentor = mentorList.get(position);
@@ -72,3 +81,4 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         startActivity(intent);
     }
 }
+

@@ -86,7 +86,7 @@
                 android:layout_height="25dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
-                app:cardBackgroundColor="@color/purple_700"
+                app:cardBackgroundColor="@color/green"
                 app:cardCornerRadius="12.5dp"
                 app:layout_constraintStart_toEndOf="@id/mentor_item_textView_numOfMentee"
                 app:layout_constraintTop_toBottomOf="@+id/mentor_item_textView_job">
@@ -116,6 +116,7 @@
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="5dp"
                 app:cardCornerRadius="12.5dp"
+                app:cardBackgroundColor="@color/orange"
                 app:layout_constraintBottom_toBottomOf="@+id/mentor_item_textView_numOfFollowers"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/mentor_item_textView_numOfFollowers"
@@ -125,7 +126,6 @@
                     android:id="@+id/mentor_item_imageButton_follow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_700"
                     android:padding="4dp"
                     app:srcCompat="@drawable/mentor_icon_follow"
                     app:tint="@color/white" />
