@@ -10,7 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
+import android.widget.Toast;
+import com.example.mentorship.Calendar.CalendarActivity;
 import com.example.mentorship.Chat.ChatScreen;
 import com.example.mentorship.R;
 
@@ -21,6 +22,7 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
    private RecyclerView recyclerView;
    private Mentor mentor = new Mentor();
    private ImageButton button_back;
+   public Button button_set_schedule,button_message,button_like;
    private Button Chat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,7 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
         setContentView(R.layout.mentor_detail_activity);
         Intent intent = getIntent();
         mentor = (Mentor) intent.getSerializableExtra("Mentor");
-        textView_numOfMentee = findViewById(R.id.mentor_detail_textView_numOfMentee);
-        Chat = findViewById(R.id.mentor_detail_button_setSchedule);
+        refer();
         textView_numOfHourMent = findViewById(R.id.mentor_detail_textView_numOfHourMentor);
         textView_rate = findViewById(R.id.mentor_detail_textView_rate);
         textView_intro = findViewById(R.id.mentor_detail_textView_introduce);
@@ -50,7 +51,7 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
         });
 
 
-        Chat.setOnClickListener(new View.OnClickListener() {
+        button_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MentorDetail.this, ChatScreen.class));
@@ -69,9 +70,31 @@ public class MentorDetail extends AppCompatActivity implements MentorActivityCli
         recyclerView.setLayoutManager(l);
         recyclerView.setAdapter(adapter);
     }
-
+    public void refer(){
+        textView_numOfMentee = findViewById(R.id.mentor_detail_textView_numOfMentee);
+        textView_numOfHourMent = findViewById(R.id.mentor_detail_textView_numOfHourMentor);
+        textView_rate = findViewById(R.id.mentor_detail_textView_rate);
+        textView_intro = findViewById(R.id.mentor_detail_textView_introduce);
+        textView_name = findViewById(R.id.mentor_detail_textView_name);
+        recyclerView = findViewById(R.id.mentor_detail_recyclerView_fields);
+        button_back = findViewById(R.id.mentor_detail_imageButton_back);
+        button_set_schedule = findViewById(R.id.mentor_detail_button_setSchedule);
+        button_message = findViewById(R.id.mentor_detail_button_message);
+        button_like = findViewById(R.id.mentor_detail_button_like);
+    }
     @Override
     public void onMentorActivityClickListener(int i) {
 
+    }
+    public void toSettingSchedule(View view){
+        Intent intent = new Intent(this, CalendarActivity.class);
+        intent.putExtra("Mentor",mentor);
+        startActivity(intent);
+    }
+    public void toLike(View view){
+        Toast.makeText(this, "Like", Toast.LENGTH_SHORT).show();
+    }
+    public void toSendingMessage(View view){
+        Toast.makeText(this, "Message", Toast.LENGTH_SHORT).show();
     }
 }

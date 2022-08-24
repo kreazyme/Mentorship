@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.mentorship.Calendar.CalendarFragment;
+import com.example.mentorship.Forum.ForumFragment;
 import com.example.mentorship.Mentor.MentorFragment;
 import com.example.mentorship.Profile.ProfileFragment;
 import com.example.mentorship.R;
@@ -32,6 +34,14 @@ public class Homepage extends AppCompatActivity {
                     case R.id.homepage_bottom_bar_profile:
                         Toast.makeText(Homepage.this, "Profile", Toast.LENGTH_SHORT).show();
                         changeFragment(new ProfileFragment());
+                        break;
+                    case R.id.homepage_bottom_bar_forum:
+                        Toast.makeText(Homepage.this, "Forum", Toast.LENGTH_SHORT).show();
+                        changeFragment(new ForumFragment());
+                        break;
+                    case R.id.homepage_bottom_bar_calendar:
+                        Toast.makeText(Homepage.this,"Calendar",Toast.LENGTH_SHORT).show();
+                        changeFragment(new CalendarFragment());
                         break;
                 }
                 return true;
