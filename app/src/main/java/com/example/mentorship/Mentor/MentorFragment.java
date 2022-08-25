@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,14 +19,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mentorship.Mentor.Activity.MentorDetail;
 import com.example.mentorship.Mentor.Activity.MentorResult;
 import com.example.mentorship.R;
+import com.example.mentorship.utils.MentorUtils;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MentorFragment extends Fragment implements MentorItemClickListener {
     private RecyclerView recyclerView;
     private Spinner spinner_field,spinner_lang;
     private Button button_find_mentor;
-    private ArrayList<Mentor> mentorList = new ArrayList<>();
+    private List<Mentor> mentorList = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -45,19 +54,7 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         ArrayList<MentorActivity> list = new ArrayList<>();
         list.add(new MentorActivity(R.drawable.android,"Định hướng và chia sẻ kinh nghiệm trong lĩnh vực Mobile Android","Java"));
         list.add(new MentorActivity(R.drawable.java,"Chia sẻ kinh nghiệm về Java","Java"));
-        mentorList.add(new Mentor(1,R.drawable.mentor_avatar,"Đình Hiếu Lê","Java Senior","MDC Software",100,200,300, (float) 4.9,"Hi every one, I'm Hieu",list,78));
-        mentorList.add(new Mentor(1,R.drawable.mentor_avatar,"Trần Đức","Java Intern","DN Software",100,100,400, 5.0F,"Hi, I'm Trần Đức Bo",list,80));
-        mentorList.add(new Mentor(1,R.drawable.mentor_avatar,"Lê Thu Thảo","CEO","Korin",100,300,100, (float) 4.8,"Hi everyon",list,200));
-        mentorList.add(new Mentor(1,R.drawable.mentor_avatar,"Hoãng Doãn","Java Senior","CMC Software",100,100,300, 4.5F,"Hi",list,100));
-        recyclerView.setHasFixedSize(true);
-        MentorItemAdapter adapter = new MentorItemAdapter(mentorList,this);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
-                getContext(),
-                LinearLayoutManager.HORIZONTAL,
-                false
-        );
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        getFullListMentor();
     }
     public void setFieldSpinner(){
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -90,6 +87,39 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         spinner_field = view.findViewById(R.id.mentor_spinner_fields);
         spinner_lang = view.findViewById(R.id.mentor_spinner_lang);
         button_find_mentor = view.findViewById(R.id.mentor_button_find_mentor);
+    }
+
+
+    public void getFullListMentor() {
+        // TODO: return list of ... mentor and set to adapter
+        DatabaseReference mentorRef = FirebaseDatabase.getInstance().getReference().child("Mentor");
+        List<Mentor> result = new ArrayList<>();
+        mentorRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot mentorSnapshot: snapshot.getChildren()) {
+                    Mentor mentor = mentorSnapshot.getValue(Mentor.class);
+                    result.add(mentor);
+                }
+                setDataRecycleView(recyclerView, result);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //Toast
+            }
+        });
+    }
+
+    public void setDataRecycleView(RecyclerView recyclerView, List<Mentor> mentorList) {
+        recyclerView.setHasFixedSize(true);
+        MentorItemAdapter adapter = new MentorItemAdapter(mentorList, this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
+                getContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 }
 

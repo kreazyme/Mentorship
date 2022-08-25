@@ -3,6 +3,7 @@ package com.example.mentorship.utils;
 import androidx.annotation.NonNull;
 
 import com.example.mentorship.Mentor.Mentor;
+import com.example.mentorship.Mentor.MentorItemAdapter;
 import com.example.mentorship.entity.Degree;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,7 +33,8 @@ public class MentorUtils {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot mentorSnapshot: snapshot.getChildren()) {
-                    result.add(mentorSnapshot.getValue(Mentor.class));
+                    Mentor mentor = mentorSnapshot.getValue(Mentor.class);
+                    result.add(mentor);
                 }
             }
             @Override
@@ -69,15 +71,6 @@ public class MentorUtils {
         });
     }
 
-    public static Mentor findMentorByID(int id) {
-        List<Mentor> mentorList = getFullListMentor();
-        for(Mentor mentor: mentorList) {
-            if (mentor.getId() == id) {
-                return mentor;
-            }
-        }
-        return null;
-    }
 
     public void findMentorBySpecialized(List<String> specialized) {
         mentorRef.addValueEventListener(new ValueEventListener() {

@@ -24,6 +24,10 @@ public class MentorItemAdapter extends RecyclerView.Adapter<MentorItemAdapter.It
         this.mentorItemClickListener = mentorItemClickListener;
     }
 
+    public void setMentorList(List<Mentor> mentorList) {
+        this.mentorList = mentorList;
+    }
+
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

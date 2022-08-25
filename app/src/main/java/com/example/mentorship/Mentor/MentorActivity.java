@@ -13,6 +13,9 @@ public class MentorActivity implements Serializable {
         this.language = language;
     }
 
+    public MentorActivity() {
+    }
+
     public int getActivityPicture() {
         return activityPicture;
     }
