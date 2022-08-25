@@ -84,7 +84,6 @@ public class MentorUtils {
                         .collect(Collectors.toList());
                 /** Set result to your adapter **/
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 //Toast
