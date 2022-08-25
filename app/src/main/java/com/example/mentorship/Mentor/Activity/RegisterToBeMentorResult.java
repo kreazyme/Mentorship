@@ -11,6 +11,6 @@ public class RegisterToBeMentorResult extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_to_be_mentor_result);
+        setContentView(R.layout.register_to_be_mentor_result_activity);
     }
 }

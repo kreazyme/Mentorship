@@ -101,6 +101,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="Thêm hoạt động"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/calendar_dialog_editText_activity"
                 app:layout_constraintStart_toStartOf="@+id/calendar_dialog_editText_activity"

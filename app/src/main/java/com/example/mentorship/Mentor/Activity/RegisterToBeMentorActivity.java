@@ -20,7 +20,7 @@ public class RegisterToBeMentorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.example.mentorship.R.layout.activity_register_to_be_mentor);
+        setContentView(com.example.mentorship.R.layout.register_to_be_mentor_activity);
         refer();
     }
 

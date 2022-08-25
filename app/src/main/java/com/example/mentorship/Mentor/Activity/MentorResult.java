@@ -35,7 +35,7 @@ public class MentorResult extends AppCompatActivity implements MentorItemClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mentor_result);
+        setContentView(R.layout.mentor_result_activity);
         refer();
         renderMentorList();
         imageButton_back.setOnClickListener(new View.OnClickListener() {
