@@ -40,7 +40,7 @@ public class Mentor implements Serializable {
             "Nấu ăn"
     ));
     private ArrayList<Degree> degreeList = new ArrayList<>(Arrays.asList(
-            new Degree("1", "abcxyz", "abcxyz")));
+            new Degree(1, "abcxyz", "abcxyz")));
     private ArrayList<String> awardList = new ArrayList<>(Arrays.asList(
             "Giải ba Olympic Toán học sinh, sinh viên"
     ));
