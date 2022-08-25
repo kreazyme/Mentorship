@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.mentorship.Mentor.Mentor;
 import com.example.mentorship.R;
+import com.example.mentorship.entity.Degree;
 
 import java.util.ArrayList;
 
@@ -47,7 +48,7 @@ public class ProfileDetail extends AppCompatActivity {
         setValueToListView(mentor.getExperienceList(),rExperience,R.drawable.profile_experience);
         setValueToListView(mentor.getStudyList(),rStudy,R.drawable.profile_study);
         setValueToListView(mentor.getSkillList(),rSkill,R.drawable.profile_skill);
-        setValueToListView(mentor.getDegreeList(),rDegree,R.drawable.profile_degree);
+        setValueToListView(getDegreeNameList(mentor.getDegreeList()),rDegree,R.drawable.profile_degree);
         setValueToListView(mentor.getAwardList(),rAward,R.drawable.profile_award);
     }
     public void setValueToListView(ArrayList<String> list, ListView listView,int pic){
@@ -61,5 +62,12 @@ public class ProfileDetail extends AppCompatActivity {
     }
     public void back(View view){
         finish();
+    }
+    public ArrayList<String> getDegreeNameList(ArrayList<Degree> list){
+        ArrayList<String> temp = new ArrayList<>();
+        for (Degree x: mentor.getDegreeList()){
+            temp.add(x.getSpecialized()+" :"+x.getLink());
+        }
+        return temp;
     }
 }

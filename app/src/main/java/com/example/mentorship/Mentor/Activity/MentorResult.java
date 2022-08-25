@@ -24,10 +24,10 @@ public class MentorResult extends AppCompatActivity implements MentorItemClickLi
             new MentorActivity(R.drawable.java, "Chia sẻ kinh nghiệm về Java", "Java")
     ));
     ArrayList<Mentor> mentorList = new ArrayList<>(Arrays.asList(
-            new Mentor(R.drawable.mentor_avatar, "Đình Hiếu Lê", "Java Senior", "MDC Software", 100, 200, 300, (float) 4.9, "Hi every one, I'm Hieu", list, 78),
-            new Mentor(R.drawable.mentor_avatar, "Trần Đức", "Java Intern", "DN Software", 100, 100, 400, 5.0F, "Hi, I'm Trần Đức Bo", list, 80),
-            new Mentor(R.drawable.mentor_avatar, "Lê Thu Thảo", "CEO", "Korin", 100, 300, 100, (float) 4.8, "Hi everyon", list, 200),
-            new Mentor(R.drawable.mentor_avatar, "Hoàng Doãn", "Java Senior", "CMC Software", 100, 100, 300, 4.5F, "Hi", list, 100)
+            new Mentor(1,R.drawable.mentor_avatar, "Đình Hiếu Lê", "Java Senior", "MDC Software", 100, 200, 300, (float) 4.9, "Hi every one, I'm Hieu", list, 78),
+            new Mentor(1,R.drawable.mentor_avatar, "Trần Đức", "Java Intern", "DN Software", 100, 100, 400, 5.0F, "Hi, I'm Trần Đức Bo", list, 80),
+            new Mentor(1,R.drawable.mentor_avatar, "Lê Thu Thảo", "CEO", "Korin", 100, 300, 100, (float) 4.8, "Hi everyon", list, 200),
+            new Mentor(1,R.drawable.mentor_avatar, "Hoàng Doãn", "Java Senior", "CMC Software", 100, 100, 300, 4.5F, "Hi", list, 100)
     ));
     private RecyclerView rMentList;
     private ImageButton imageButton_back;
@@ -35,7 +35,7 @@ public class MentorResult extends AppCompatActivity implements MentorItemClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mentor_result);
+        setContentView(R.layout.mentor_result_activity);
         refer();
         renderMentorList();
         imageButton_back.setOnClickListener(new View.OnClickListener() {

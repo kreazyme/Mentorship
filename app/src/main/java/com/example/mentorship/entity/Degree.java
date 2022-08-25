@@ -1,6 +1,7 @@
 package com.example.mentorship.entity;
+import java.io.Serializable;
 
-public class Degree {
+public class Degree implements Serializable {
     private int id;
     private String link;
     private String specialized;
