@@ -28,12 +28,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MentorFragment extends Fragment implements MentorItemClickListener {
     private RecyclerView recyclerView;
     private Spinner spinner_field,spinner_lang;
     private Button button_find_mentor;
     private List<Mentor> mentorList = new ArrayList<>();
+    DatabaseReference mentorRef = FirebaseDatabase.getInstance().getReference().child("Mentor");
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -54,6 +56,15 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         ArrayList<MentorActivity> list = new ArrayList<>();
         list.add(new MentorActivity(R.drawable.android,"Định hướng và chia sẻ kinh nghiệm trong lĩnh vực Mobile Android","Java"));
         list.add(new MentorActivity(R.drawable.java,"Chia sẻ kinh nghiệm về Java","Java"));
+        recyclerView.setHasFixedSize(true);
+        MentorItemAdapter adapter = new MentorItemAdapter(mentorList, this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
+                getContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        recyclerView.setLayoutManager(layoutManager);
+        //recyclerView.setAdapter(adapter);
         getFullListMentor();
     }
     public void setFieldSpinner(){
@@ -92,16 +103,17 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
 
     public void getFullListMentor() {
         // TODO: return list of ... mentor and set to adapter
-        DatabaseReference mentorRef = FirebaseDatabase.getInstance().getReference().child("Mentor");
         List<Mentor> result = new ArrayList<>();
         mentorRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot mentorSnapshot: snapshot.getChildren()) {
                     Mentor mentor = mentorSnapshot.getValue(Mentor.class);
-                    result.add(mentor);
+                    mentorList.add(mentor);
                 }
-                setDataRecycleView(recyclerView, result);
+                MentorItemAdapter adapter = new MentorItemAdapter(mentorList,MentorFragment.this);
+                recyclerView.setAdapter(adapter);
+                //setDataRecycleView(recyclerView,result);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -110,16 +122,5 @@ public class MentorFragment extends Fragment implements MentorItemClickListener 
         });
     }
 
-    public void setDataRecycleView(RecyclerView recyclerView, List<Mentor> mentorList) {
-        recyclerView.setHasFixedSize(true);
-        MentorItemAdapter adapter = new MentorItemAdapter(mentorList, this);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
-                getContext(),
-                LinearLayoutManager.HORIZONTAL,
-                false
-        );
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-    }
 }
 
