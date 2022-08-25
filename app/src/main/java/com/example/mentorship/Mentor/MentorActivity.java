@@ -11,6 +11,9 @@ public class MentorActivity {
         this.language = language;
     }
 
+    public MentorActivity() {
+    }
+
     public int getActivityPicture() {
         return activityPicture;
     }
