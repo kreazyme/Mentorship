@@ -4,9 +4,6 @@ import androidx.annotation.NonNull;
 
 import com.example.mentorship.Mentor.Mentor;
 import com.example.mentorship.entity.Degree;
-import com.example.mentorship.entity.MentorCalendar;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,9 +16,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MentorUtils {
-    DatabaseReference mentorRef = FirebaseDatabase.getInstance().getReference().child("Mentor");
+    public static DatabaseReference mentorRef = FirebaseDatabase.getInstance().getReference().child("Mentor");
 
-    public void addMentor(Mentor mentor) {
+    public static void addMentor(Mentor mentor) {
         try {
             mentorRef.push().setValue(mentor);
         } catch (Exception ex) {
@@ -29,6 +26,22 @@ public class MentorUtils {
         }
     }
 
+    public static List<Mentor> getFullListMentor() {
+        List<Mentor> result = new ArrayList<>();
+        mentorRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot mentorSnapshot: snapshot.getChildren()) {
+                    result.add(mentorSnapshot.getValue(Mentor.class));
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //Toast
+            }
+        });
+        return result;
+    }
 
 
     public void getTenHightlightMentors(){
@@ -56,20 +69,14 @@ public class MentorUtils {
         });
     }
 
-    public void findMentorByID(String id) {
-        mentorRef.child(id)
-                .get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
-                        if(!task.isSuccessful()) {
-                            //Toast
-                        } else {
-                            Mentor result = task.getResult().getValue(Mentor.class);
-
-                            /** Add to adapter **/
-                        }
-                    }
-                });
+    public static Mentor findMentorByID(int id) {
+        List<Mentor> mentorList = getFullListMentor();
+        for(Mentor mentor: mentorList) {
+            if (mentor.getId() == id) {
+                return mentor;
+            }
+        }
+        return null;
     }
 
     public void findMentorBySpecialized(List<String> specialized) {
@@ -92,15 +99,24 @@ public class MentorUtils {
         });
     }
 
-    public void updateDegree(Degree degree, String mentorId) {
-        try {
-            mentorRef.child(mentorId).child("degreeList").push().setValue(degree);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
+    public void updateDegree(Degree degree, int mentorId) {
+        mentorRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Mentor result = new Mentor();
+                for(DataSnapshot mentorSnapshot: snapshot.getChildren()) {
+                    result = mentorSnapshot.getValue(Mentor.class);
+                    if(result.getId() == mentorId) {
+                        mentorSnapshot.getRef().push().setValue(degree);
+                        break;
+                    }
+                }
+            }
 
-    public void setMeetingCalendar(MentorCalendar mentorCalendar) {
-
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //Toast
+            }
+        });
     }
 }

@@ -5,6 +5,8 @@ import com.example.mentorship.entity.Degree;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
 
+import org.jetbrains.annotations.PropertyKey;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,6 +14,7 @@ import java.util.Arrays;
 @IgnoreExtraProperties
 public class Mentor implements Serializable {
     private int avatar = R.drawable.mentor_avatar;
+    private int id;
     private String name = "";
     private String job = "";
     private String phoneNum = "";
@@ -37,11 +40,12 @@ public class Mentor implements Serializable {
             "Nấu ăn"
     ));
     private ArrayList<Degree> degreeList = new ArrayList<>(Arrays.asList(
-            new Degree("1", "abcxyz", "abcxyz")));
+            new Degree(1, "abcxyz", "abcxyz")));
     private ArrayList<String> awardList = new ArrayList<>(Arrays.asList(
             "Giải ba Olympic Toán học sinh, sinh viên"
     ));
-    public Mentor(int avatar, String name, String job, String workPlace,int numOfMentor, int numOfMentee, int numOfFollowers, float rate, String introduction, ArrayList<MentorActivity> mentorActivities,int x) {
+    public Mentor(int id, int avatar, String name, String job, String workPlace,int numOfMentor, int numOfMentee, int numOfFollowers, float rate, String introduction, ArrayList<MentorActivity> mentorActivities,int x) {
+        this.id = id;
         this.avatar = avatar;
         this.name = name;
         this.job = job;
@@ -55,7 +59,8 @@ public class Mentor implements Serializable {
         this.numOfHourMent = x;
     }
 
-    public Mentor(int avatar, String name, String job, String workPlace, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<Degree> degreeList, ArrayList<String> awardList) {
+    public Mentor(int id, int avatar, String name, String job, String workPlace, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<Degree> degreeList, ArrayList<String> awardList) {
+        this.id = id;
         this.avatar = avatar;
         this.name = name;
         this.job = job;
@@ -73,7 +78,8 @@ public class Mentor implements Serializable {
         this.awardList = awardList;
     }
 
-    public Mentor(int avatar, String name, String job, String phoneNum, String email, String workPlace, int numOfMentor, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<Degree> degreeList, ArrayList<String> awardList) {
+    public Mentor(int id, int avatar, String name, String job, String phoneNum, String email, String workPlace, int numOfMentor, int numOfMentee, int numOfFollowers, int numOfHourMent, float rate, String introduction, ArrayList<MentorActivity> mentorActivities, ArrayList<String> experienceList, ArrayList<String> studyList, ArrayList<String> skillList, ArrayList<Degree> degreeList, ArrayList<String> awardList) {
+        this.id = id;
         this.avatar = avatar;
         this.name = name;
         this.job = job;
@@ -96,6 +102,14 @@ public class Mentor implements Serializable {
 
     public Mentor() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPhoneNum() {

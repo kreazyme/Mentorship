@@ -30,7 +30,7 @@ public class ProfileFragment extends Fragment {
     ArrayList<MentorActivity> list = new ArrayList<>(Arrays.asList(
             new MentorActivity(R.drawable.java, "Java Senior", "Java")
     ));
-    private Mentor mentor = new Mentor(R.drawable.mentor_avatar, "Đình Hiếu Lê", "Java Senior", "MDC Software", 100, 200, 300, (float) 4.9, "Hi every one, I'm Hieu", list, 78);
+    private Mentor mentor = new Mentor(1,R.drawable.mentor_avatar, "Đình Hiếu Lê", "Java Senior", "MDC Software", 100, 200, 300, (float) 4.9, "Hi every one, I'm Hieu", list, 78);
 
     @Nullable
     @Override
